@@ -15,7 +15,7 @@ const refs = {
 
 const handleInput = (event) => {
     event.preventDefault();
-    const searchCountries = event.currentTarget.value.trim().toLowerCase();
+    const searchCountries = event.target.value.trim().toLowerCase();
     clearResult();
     if (searchCountries !== '') {
         fetchCountries(searchCountries)
@@ -74,6 +74,5 @@ function clearResult() {
   refs.box.innerHTML = '';
 }
 
-refs.input.addEventListener('input', handleInput);
 
-// refs.input.addEventListener('input', debounce(handleInput, DEBOUNCE_DELAY));
+refs.input.addEventListener('input', debounce(handleInput, DEBOUNCE_DELAY));
